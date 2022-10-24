@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router();
 //Importar el modelo 
-import Bono from '../models/Bono'
+import Bono from '../models/bono'
 
 router.get('/bono', async (req, res) => {
     try {
