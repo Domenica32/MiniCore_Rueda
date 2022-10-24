@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "desa":"node index.js",
     "start": "babel-node index.js",
     "dev": "nodemon index.js",
     "devbabel": "nodemon index.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Juan Francisco RV",
+  "author": "Domenica Rueda",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.13.14",
