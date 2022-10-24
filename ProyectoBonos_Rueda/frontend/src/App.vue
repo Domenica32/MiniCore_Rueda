@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div>
     <form @submit.prevent="buscarBonos" class="px-10 py-2">
