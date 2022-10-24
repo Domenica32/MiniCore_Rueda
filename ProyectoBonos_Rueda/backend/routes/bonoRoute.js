@@ -5,7 +5,7 @@ import Bono from '../models/Bono'
 
 router.get('/bono', async (req, res) => {
     try {
-        const bonoDB = await Bono.find().populate({path:'usuario', select:'empleadoNombre'});
+        const bonoDB = await Bono.find().populate('usuario');
         console.log(bonoDB);
         return(res.json(bonoDB));
         res.json(bonoDB);
