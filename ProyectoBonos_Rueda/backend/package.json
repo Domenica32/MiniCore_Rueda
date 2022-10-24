@@ -2,10 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
+  "type": "module",
   "scripts": {
-    "desa":"node index.js",
-    "start": "babel-node index.js",
+    "start": "node index.js ",
+    "startt": "babel-node index.js",
     "dev": "nodemon index.js",
     "devbabel": "nodemon index.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"

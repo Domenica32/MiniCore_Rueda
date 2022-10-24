@@ -2,15 +2,15 @@ import cors from 'cors'
 import morgan from 'morgan'
 
 //Trae express al servidor
-const express = require("express");
-const mongoose = require("mongoose");
+import express from 'express';
+import mongoose from 'mongoose';
 
 //inicializa proyecto
 const app = express();
 
 // Importacion de rutas 
-const empleadoRoute = require("./routes/empleadoRoute.js");
-const bonoRoute = require("./routes/bonoRoute.js");
+import { empleadoRouter } from './routes/empleadoRoute.js'
+import { bonoRouter } from './routes/bonoRoute.js';
 
 //Configurar body-parser
 app.use(morgan('tiny'));
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Conexion con MongoDB 
-mongoose.connect("mongodb+srv://Domenica16:m2Nos6nkpzLC3mzo@clusterrd.qohecm4.mongodb.net/proyectoBonos",{
+mongoose.connect("mongodb+srv://Domenica16:m2Nos6nkpzLC3mzo@clusterrd.qohecm4.mongodb.net/proyectoBonos", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
@@ -28,22 +28,22 @@ mongoose.connect("mongodb+srv://Domenica16:m2Nos6nkpzLC3mzo@clusterrd.qohecm4.mo
 const db = mongoose.connection;
 
 //Test de que la base de datos funciona
-if(!db){
+if (!db) {
     console.log("Error valio Ron todo")
-}else{
+} else {
     console.log("Todo funciona correctamente")
 }
 
 //Asigna el puerto
 var port = process.env.PORT || 5000;
 
-app.use("/api",empleadoRoute);
-app.use("/api",bonoRoute);
+app.use("/api", empleadoRouter);
+app.use("/api", bonoRouter);
 
-const history = require("connect-history-api-fallback");
+import history from "connect-history-api-fallback";
 app.use(history());
 
 // Hacer que escuche el puerto 
-app.listen(port, ()=>{
-    console.log("localhost:",port)
+app.listen(port, () => {
+    console.log("localhost:", port)
 });

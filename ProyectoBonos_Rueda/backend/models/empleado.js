@@ -1,18 +1,17 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 //Schema empleado
 const empleadoSchema = new Schema({
-    empleadoNombre: { 
-        type: String, 
+    empleadoNombre: {
+        type: String,
         required: true
     },
-    empleadoApellido: { 
-        type: String, 
+    empleadoApellido: {
+        type: String,
         required: true
     }
 });
 
 //Exportar modelo
-const Empleado = mongoose.model('Empleado', empleadoSchema);
-export default Empleado;
+export const Empleado = mongoose.model('Empleado', empleadoSchema);

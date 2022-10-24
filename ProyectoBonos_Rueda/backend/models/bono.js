@@ -1,21 +1,20 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const bonoSchema = new Schema({
-    bonoFecha: { 
-        type: Date, 
+    bonoFecha: {
+        type: Date,
         required: true
     },
     bonoMotivo: {
-        type: String, 
+        type: String,
         required: true
     },
     bonoCantidad: {
-        type: Number, 
+        type: Number,
         min: 0
     },
-    usuario: {type: Schema.Types.ObjectId, ref:'Empleado'}
+    usuario: { type: Schema.Types.ObjectId, ref: 'Empleado' }
 });
 
-const Bono = mongoose.model('Bono', bonoSchema);
-export default Bono;
+export const Bono = mongoose.model('Bono', bonoSchema);
