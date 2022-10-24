@@ -10,4 +10,4 @@ import VueAxios from 'vue-axios';
 
 createApp(App).use(VueAxios, axios).mount('#app')
 
-axios.defaults.baseURL = 'http://localhost:5000/api'
+axios.defaults.baseURL = 'https://aqueous-headland-58640.herokuapp.com/'
