@@ -29,7 +29,7 @@ const db = mongoose.connection;
 
 //Test de que la base de datos funciona
 if (!db) {
-    console.log("Error valio Ron todo")
+    console.log("Error  no se pudo ejecutar corectamente")
 } else {
     console.log("Todo funciona correctamente")
 }

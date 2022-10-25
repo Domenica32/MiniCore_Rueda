@@ -6,8 +6,8 @@
 npm install
 ```
 
-### Run the devbabel
+### Compiles and hot-reloads for development
 
 ```
-npm run devbabel
+npm run start
 ```
